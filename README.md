@@ -66,6 +66,7 @@ class Parent extends React.Component {
             onChange={e => this.setState({ newContext: e.target.value })}
           />
         </div>
+	//新的context方法
         <Provider value={this.state.newContext}>{this.props.children}</Provider>
       </>
     )
@@ -82,16 +83,16 @@ class Parent2 extends React.Component {
     return this.props.children
   }
 }
-
 function Child1(props, context) {
   console.log(context)
+  //新的context方法
   return <Consumer>{value => <p>newContext: {value}</p>}</Consumer>
 }
 
 Child1.contextTypes = {
   value: PropTypes.string,
 }
-
+//老的context方法
 class Child2 extends React.Component {
   render() {
     return (
@@ -103,7 +104,7 @@ class Child2 extends React.Component {
 }
 
 // Child2.contextType = Consumer
-
+//老的context方法
 Child2.contextTypes = {
   value: PropTypes.string,
   a: PropTypes.string,
