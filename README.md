@@ -129,4 +129,6 @@ export default () => (
 )
 
 `
+concurrent-mode
+让react的渲染过程能够进行优先级排比，并且能够中断，进行任务调度，将更多的cpu性能分配给优先级较高的
 
